@@ -1,6 +1,6 @@
 # StringCalculatorKata
 
-Implementation of the StringCalculator Kata in PHP  from https://osherove.com/tdd-kata-1
+Implementation of the StringCalculator Kata in PHP from https://osherove.com/tdd-kata-1. The code here completes all 9 tasks.
 
 ## Specs
 * PHP  7.3.2
@@ -9,4 +9,4 @@ Implementation of the StringCalculator Kata in PHP  from https://osherove.com/td
 * PHPUnit 8.0.0
 
 ## Todo
-* Task 7
+* Make the code self documenting
