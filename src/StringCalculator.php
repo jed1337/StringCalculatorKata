@@ -28,7 +28,7 @@ class StringCalculator {
     }
 
     private function getCustomDelimiterArray($numbers) {
-        //Starts with a delimiter declaration
+        //Doesn't start with a delimiter declaration
         if(!preg_match_all('#//.+?\n#', $numbers, $matches)){
             return array(self::DEFAULT_DELIMITER);
         }
