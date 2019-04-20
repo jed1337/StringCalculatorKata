@@ -17,22 +17,27 @@ class StringCalculator {
         $this->throwExceptionIfThereAreNegatives($number_array);
 
         $number_array = $this->removeNumbersGreaterThan1000($number_array);
-        return $this->getTotal($number_array);
+        return array_sum($number_array);
     }
 
     private function handleCustomDelimiters($numbers) {
-        $custom_delimiter = $this->getCustomDelimiter($numbers);
-        $numbers = $this->convertCustomDelimiterToDefaultDelimiter($custom_delimiter, $numbers);
+        $custom_delimiter_array = $this->getCustomDelimiterArray($numbers);
+        foreach ($custom_delimiter_array as $custom_delimiter){
+            $numbers = $this->convertCustomDelimiterToDefaultDelimiter($custom_delimiter, $numbers);
+        }
+
         return $this->removeCustomDelimiterDeclaration($numbers);
     }
 
-    private function getCustomDelimiter($numbers) {
-        if (preg_match(self::SINGLE_CHARACTER_DELIMITER_REGEX, $numbers, $matches) ||
-            preg_match(self::MULTIPLE_CHARACTER_DELIMITER_REGEX, $numbers, $matches)) {
-
+    private function getCustomDelimiterArray($numbers) {
+        if(!preg_match_all('#//.+?\n#', $numbers, $matches)){
+            return array(self::DEFAULT_DELIMITER);
+        }
+        if (preg_match_all('#//(.)\n#', $numbers, $matches)||
+            preg_match_all('#\[(.+?)\]#', $numbers, $matches)){
             return $matches[1];
         }
-        return self::DEFAULT_DELIMITER;
+        return array(self::DEFAULT_DELIMITER);
     }
 
     private function convertCustomDelimiterToDefaultDelimiter($customDelimiter, $numbers) {
@@ -67,14 +72,5 @@ class StringCalculator {
             }
         }
         return $number_array;
-    }
-
-    private function getTotal($number_array) {
-        $total = 0;
-
-        foreach ($number_array as $number) {
-            $total += $number;
-        }
-        return $total;
     }
 }
