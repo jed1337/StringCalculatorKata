@@ -2,8 +2,6 @@
 
 class StringCalculator {
     const DEFAULT_DELIMITER = ',';
-    const SINGLE_CHARACTER_DELIMITER_REGEX = '#//(.)\n#';
-    const MULTIPLE_CHARACTER_DELIMITER_REGEX = '#//\[(.*)\]\n#';
 
     public function add($numbers) {
         $numbers = $this->handleCustomDelimiters($numbers);
@@ -30,9 +28,12 @@ class StringCalculator {
     }
 
     private function getCustomDelimiterArray($numbers) {
+        //Starts with a delimiter declaration
         if(!preg_match_all('#//.+?\n#', $numbers, $matches)){
             return array(self::DEFAULT_DELIMITER);
         }
+
+        //Has a single character delimiter or multiple delimiters
         if (preg_match_all('#//(.)\n#', $numbers, $matches)||
             preg_match_all('#\[(.+?)\]#', $numbers, $matches)){
             return $matches[1];
