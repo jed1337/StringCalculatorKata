@@ -13,14 +13,14 @@ class StringCalculatorTest extends \PHPUnit\Framework\TestCase{
     }
 
 	public function testAddNumbers(){
-		$this->assertEquals(0, $this->calc->add(''));
+        $this->assertEquals(0, $this->calc->add(""));
 
-		$this->assertEquals(1, $this->calc->add('1'));
+        $this->assertEquals(1, $this->calc->add("1"));
 
-		$this->assertEquals(3, $this->calc->add('1,2'));
+        $this->assertEquals(3, $this->calc->add("1,2"));
 
-		$this->assertEquals(10, $this->calc->add('1,2,3,4'));
-		$this->assertEquals(15, $this->calc->add('5,4,3,2,1,0'));
+        $this->assertEquals(10, $this->calc->add("1,2,3,4"));
+        $this->assertEquals(15, $this->calc->add("5,4,3,2,1,0"));
 	}
 
 	public function testAddNumbersWithNewline(){
@@ -46,8 +46,14 @@ class StringCalculatorTest extends \PHPUnit\Framework\TestCase{
 
     public function testExceptionForMultipleNegativeNumbers(){
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage("Negative numbers are not allowed: -10 -2 -03");
+        $this->expectExceptionMessage("Negative numbers are not allowed: -10,-2,-03");
 
         $this->calc->add("2,-10,3,-2,15,-03");
+    }
+
+    public function testIgnoreNumbersBiggerThan1000() {
+        $this->assertEquals(1000, $this->calc->add("1000"));
+        $this->assertEquals(2, $this->calc->add("2,1001"));
+        $this->assertEquals(1010, $this->calc->add("1000,7,1001,1,9876,2"));
     }
 }

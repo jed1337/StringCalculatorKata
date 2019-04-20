@@ -4,69 +4,68 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6a41f7e640f6c5434142569d5baba4ac
-{
-    public static $files = array (
+class ComposerStaticInit6a41f7e640f6c5434142569d5baba4ac {
+    public static $files = array(
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     );
 
-    public static $prefixLengthsPsr4 = array (
-        'p' => 
-        array (
-            'phpDocumentor\\Reflection\\' => 25,
-        ),
-        'W' => 
-        array (
-            'Webmozart\\Assert\\' => 17,
-        ),
-        'S' => 
-        array (
-            'Symfony\\Polyfill\\Ctype\\' => 23,
-        ),
-        'D' => 
-        array (
-            'Doctrine\\Instantiator\\' => 22,
-            'DeepCopy\\' => 9,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'phpDocumentor\\Reflection\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-        ),
-        'Webmozart\\Assert\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/webmozart/assert/src',
-        ),
-        'Symfony\\Polyfill\\Ctype\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
-        ),
-        'Doctrine\\Instantiator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
-        ),
-        'DeepCopy\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'P' => 
-        array (
-            'Prophecy\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+    public static $prefixLengthsPsr4 = array(
+        'p' =>
+            array(
+                'phpDocumentor\\Reflection\\' => 25,
             ),
-        ),
+        'W' =>
+            array(
+                'Webmozart\\Assert\\' => 17,
+            ),
+        'S' =>
+            array(
+                'Symfony\\Polyfill\\Ctype\\' => 23,
+            ),
+        'D' =>
+            array(
+                'Doctrine\\Instantiator\\' => 22,
+                'DeepCopy\\' => 9,
+            ),
     );
 
-    public static $classMap = array (
+    public static $prefixDirsPsr4 = array(
+        'phpDocumentor\\Reflection\\' =>
+            array(
+                0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+                1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+                2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            ),
+        'Webmozart\\Assert\\' =>
+            array(
+                0 => __DIR__ . '/..' . '/webmozart/assert/src',
+            ),
+        'Symfony\\Polyfill\\Ctype\\' =>
+            array(
+                0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+            ),
+        'Doctrine\\Instantiator\\' =>
+            array(
+                0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+            ),
+        'DeepCopy\\' =>
+            array(
+                0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+            ),
+    );
+
+    public static $prefixesPsr0 = array(
+        'P' =>
+            array(
+                'Prophecy\\' =>
+                    array(
+                        0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+                    ),
+            ),
+    );
+
+    public static $classMap = array(
         'Help' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Help.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
@@ -618,8 +617,7 @@ class ComposerStaticInit6a41f7e640f6c5434142569d5baba4ac
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
     );
 
-    public static function getInitializer(ClassLoader $loader)
-    {
+    public static function getInitializer(ClassLoader $loader) {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit6a41f7e640f6c5434142569d5baba4ac::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit6a41f7e640f6c5434142569d5baba4ac::$prefixDirsPsr4;
