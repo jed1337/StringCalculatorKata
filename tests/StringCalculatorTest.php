@@ -56,4 +56,10 @@ class StringCalculatorTest extends \PHPUnit\Framework\TestCase{
         $this->assertEquals(2, $this->calc->add("2,1001"));
         $this->assertEquals(1010, $this->calc->add("1000,7,1001,1,9876,2"));
     }
+
+    public function testsMultipleCharacterDelimiter(){
+        $this->assertEquals(6, $this->calc->add("//[***]\n1***2***3"));
+        $this->assertEquals(11, $this->calc->add("//[_ZA_WARUDO_]\n4_ZA_WARUDO_2_ZA_WARUDO_3_ZA_WARUDO_2"));
+        $this->assertEquals(5, $this->calc->add("//[時よ止まれ]\n0時よ止まれ2時よ止まれ3"));
+    }
 }
