@@ -7,3 +7,6 @@ Implementation of the StringCalculator Kata in PHP  from https://osherove.com/td
 * Zend Engine 3.3.2
 * Xdebug 2.7.1
 * PHPUnit 8.0.0
+
+## Todo
+* Task 7
